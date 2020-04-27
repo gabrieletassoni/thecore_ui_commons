@@ -13,3 +13,6 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
+
+gem 'thecore_backend_commons', path: '../thecore_backend_commons'
+gem 'sqlite3'
