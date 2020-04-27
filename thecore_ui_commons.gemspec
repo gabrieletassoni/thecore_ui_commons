@@ -26,4 +26,6 @@ Gem::Specification.new do |spec|
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "thecore_backend_commons", "~> 2.2"
+
+  spec.add_dependency 'serviceworker-rails',  "~> 0.5"
 end
