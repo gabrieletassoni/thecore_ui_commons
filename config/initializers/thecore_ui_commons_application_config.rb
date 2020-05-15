@@ -10,11 +10,8 @@ Rails.application.configure do
   config.assets.precompile += %w( android-chrome-512x512.png )
   config.assets.precompile += %w( logo.png )
   config.assets.precompile += %w( up-arrow.png )
-  # mstile-150x150
   config.assets.precompile += %w( thecore.js )
   config.assets.precompile += %w( thecore.css )
-  # config.assets.precompile += %w( app_logo.png )
-  # config.assets.precompile += %w( main_app_logo.png )
   config.assets.precompile += %w( ie.js )
   config.assets.precompile += %w( manifest.json )
   config.assets.precompile += %w( browserconfig.xml )
@@ -32,4 +29,8 @@ Rails.application.configure do
   config.serviceworker.routes.draw do
     match "/manifest.json"
   end
+
+  config.after_initialize do
+    User.send(:include, ThecoreUiCommonsUser)
+end
 end
