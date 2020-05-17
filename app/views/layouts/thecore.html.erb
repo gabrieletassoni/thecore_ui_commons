@@ -9,9 +9,15 @@
 
     <%= tag("link", rel: "manifest", href: asset_path("manifest.json", skip_pipeline: true)) %>
     <meta name="turbolinks-cache-control" content="no-cache">
-    <%= stylesheet_link_tag 'thecore', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'thecore', 'data-turbolinks-track' => true %>
 
+    <%-Rails.application.config.assets.paths.each do |p| %>
+    <%# Getting all the assets needed by thecore from all the gems %>
+    <%= stylesheet_link_tag("#{p.to_s.split("/").last}/thecore", media: 'all', 'data-turbolinks-track' => true) if File.exists?("#{p}/thecore.scss") %>
+    <%= javascript_include_tag("#{Dir["#{p}/**/thecore.js"].first.split("/")[-2]}/thecore", 'data-turbolinks-track' => true) if Dir["#{p}/**/thecore.js"].any? %>
+    <%-end%>
+    <%= stylesheet_link_tag('application', media: 'all', 'data-turbolinks-track' => true) if ::Rails.application.assets.find_asset("application.css")%>
+    <%= javascript_include_tag('application', 'data-turbolinks-track' => true) if ::Rails.application.assets.find_asset("application.js") %>
+    
     <%= favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', sizes: "180x180" %>
     <%= favicon_link_tag 'favicon-32x32.png', rel: 'icon', sizes: "32x32" %>
     <%= favicon_link_tag 'favicon-16x16.png', rel: 'icon', sizes: "16x16" %>

@@ -1,5 +1,4 @@
 Rails.application.configure do
-  config.assets.precompile += %w( thecore_ui_commons/index.js thecore_ui_commons/index.css )
   config.assets.precompile += %w( favicon.ico )
   config.assets.precompile += %w( apple-touch-icon.png )
   config.assets.precompile += %w( favicon-32x32.png )
@@ -15,22 +14,24 @@ Rails.application.configure do
   config.assets.precompile += %w( ie.js )
   config.assets.precompile += %w( manifest.json )
   config.assets.precompile += %w( browserconfig.xml )
-
+  config.assets.precompile += %w( thecore_ui_commons/thecore.js )
+  config.assets.precompile += %w( thecore_ui_commons/thecore.css )
+  config.assets.paths << Rails.root.join('node_modules')
   # config.action_controller.asset_host = if ENV['RAILS_URL'].blank? || ENV['RAILS_RELATIVE_URL_ROOT'].blank?
   #   "http://localhost:3000"
   # else
   #   "#{ENV['RAILS_URL']}#{ENV['RAILS_RELATIVE_URL_ROOT']}"
   # end
-
+  
   config.filter_parameters += [:password]
-
+  
   config.active_record.raise_in_transactional_callbacks = true
-
+  
   config.serviceworker.routes.draw do
     match "/manifest.json"
   end
-
+  
   config.after_initialize do
     User.send(:include, ThecoreUiCommonsUser)
-end
+  end
 end
