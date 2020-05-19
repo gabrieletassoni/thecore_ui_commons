@@ -16,7 +16,14 @@ Rails.application.configure do
   config.assets.precompile += %w( browserconfig.xml )
   config.assets.precompile += %w( thecore_ui_commons/thecore.js )
   config.assets.precompile += %w( thecore_ui_commons/thecore.css )
-  config.assets.paths << Rails.root.join('node_modules')
+  # Very important, needed for trix (i.e.)
+  config.assets.paths << root.join('node_modules')
+  # Putting also a reference on the assets foldes in the paths, so to have the 
+  # stylesheet and javascript hack work proprly in layout
+  # config.assets.paths << 
+  # root.join("app", "assets", "stylesheets", "thecore_ui_commons")
+  # config.assets.paths << 
+  # root.join("app", "assets", "javascripts", "thecore_ui_commons")
   # config.action_controller.asset_host = if ENV['RAILS_URL'].blank? || ENV['RAILS_RELATIVE_URL_ROOT'].blank?
   #   "http://localhost:3000"
   # else

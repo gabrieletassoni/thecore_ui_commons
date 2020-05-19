@@ -1,0 +1,4 @@
+en:
+    activerecord:
+        models:
+            rails_admin_settings/setting: Configurations

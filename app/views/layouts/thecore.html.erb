@@ -10,11 +10,8 @@
     <%= tag("link", rel: "manifest", href: asset_path("manifest.json", skip_pipeline: true)) %>
     <meta name="turbolinks-cache-control" content="no-cache">
 
-    <%-Rails.application.config.assets.paths.each do |p| %>
     <%# Getting all the assets needed by thecore from all the gems %>
-    <%= stylesheet_link_tag("#{p.to_s.split("/").last}/thecore", media: 'all', 'data-turbolinks-track' => true) if File.exists?("#{p}/thecore.scss") %>
-    <%= javascript_include_tag("#{Dir["#{p}/**/thecore.js"].first.split("/")[-2]}/thecore", 'data-turbolinks-track' => true) if Dir["#{p}/**/thecore.js"].any? %>
-    <%-end%>
+    <%= get_asset_tags_for("thecore")%>
     <%= stylesheet_link_tag('application', media: 'all', 'data-turbolinks-track' => true) if ::Rails.application.assets.find_asset("application.css")%>
     <%= javascript_include_tag('application', 'data-turbolinks-track' => true) if ::Rails.application.assets.find_asset("application.js") %>
     
