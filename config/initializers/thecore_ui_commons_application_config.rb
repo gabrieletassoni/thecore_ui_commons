@@ -18,6 +18,9 @@ Rails.application.configure do
   config.assets.precompile += %w( thecore_ui_commons/thecore.css )
   # Very important, needed for trix (i.e.)
   config.assets.paths << root.join('node_modules')
+  # To store D3 Data
+  # https://medium.com/@hguotblog/use-d3-js-for-data-visualisation-with-rails-69b4f030e366
+  config.assets.paths << root.join('data')
   # Putting also a reference on the assets foldes in the paths, so to have the 
   # stylesheet and javascript hack work proprly in layout
   # config.assets.paths << 

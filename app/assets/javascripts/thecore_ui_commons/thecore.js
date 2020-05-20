@@ -5,4 +5,5 @@
 //= require bootstrap
 //= require ie
 //= require timer
+//= require d3
 //= require_tree .
