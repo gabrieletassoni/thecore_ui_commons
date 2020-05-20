@@ -5,6 +5,4 @@
 //= require bootstrap
 //= require ie
 //= require timer
-//= require trix/dist/trix
-//= require @rails/actiontext
 //= require_tree .
