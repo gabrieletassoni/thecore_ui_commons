@@ -5,5 +5,6 @@
 //= require bootstrap
 //= require ie
 //= require timer
-//= require d3
+//= require chartkick
+//= require Chart.bundle
 //= require_tree .
