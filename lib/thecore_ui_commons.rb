@@ -1,4 +1,4 @@
-require 'thecore_backend_commons'
+require 'thecore_background_jobs' # This brings backend commons also.
 # Rails
 require 'serviceworker-rails'
 
