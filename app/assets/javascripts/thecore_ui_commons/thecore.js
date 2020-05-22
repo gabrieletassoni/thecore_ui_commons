@@ -5,9 +5,5 @@
 //= require bootstrap
 //= require ie
 //= require timer
-<<<<<<< HEAD
-//= require_tree .
-=======
 //= require chartkick
 //= require Chart.bundle
->>>>>>> master
