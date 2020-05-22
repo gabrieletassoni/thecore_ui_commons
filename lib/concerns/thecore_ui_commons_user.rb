@@ -5,6 +5,8 @@ module ThecoreUiCommonsUser
     
     included do
         devise :database_authenticatable, :trackable, :validatable, :rememberable, :timeoutable, timeout_in: 30.minutes, authentication_keys: [:login]
+        validates :username, uniqueness: { case_sensitive: false }, presence: true, length: { in: 4..15 }
+        validates_format_of :username, with: /\A[a-zA-Z0-9]*\z/, on: :create, message: "can only contain letters and digits"
         
         attr_writer :login
         
