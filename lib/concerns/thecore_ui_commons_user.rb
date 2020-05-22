@@ -13,7 +13,6 @@ module ThecoreUiCommonsUser
         end
         # Use login
         def self.find_first_by_auth_conditions(warden_conditions)
-            puts "################################ VIENE USATO? #####################################################"
             conditions = warden_conditions.dup
             if login = conditions.delete(:login)
                 where(conditions.to_h).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
