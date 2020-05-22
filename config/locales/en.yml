@@ -1,0 +1,44 @@
+en:
+  current_user: Current User
+  hello: Hello World
+  dashboard: Dashboard
+  contact: Help us
+  manage: Manage
+  sign_out: Sign Out 
+  advanced: Advanced
+  main_records: Registries
+  errors:
+    messages:
+      invalid: Invalid characters
+  tiered_times:
+    dd:
+      zero: "0 Days"
+      one: "%{count} Day"
+      other: "%{count} Days"
+    hh:
+      zero: "0 Hours"
+      one: "%{count} Hour"
+      other: "%{count} Hours"
+    mm:
+      zero: "0 Minutes"
+      one: "%{count} Minute"
+      other: "%{count} Minutes"
+    ss:
+      zero: "0 Seconds"
+      one: "%{count} Second"
+      other: "%{count} Seconds"
+  admin:
+    links:
+      label: Links
+    tools:
+      label: Tools
+    settings:
+      label: Settings
+      advanced: Advanced
+      registries: Registries
+      operations: Operations
+    actions:
+      charts:
+        menu: Analisys
+        title: Charts
+        breadcrumb: Charts
