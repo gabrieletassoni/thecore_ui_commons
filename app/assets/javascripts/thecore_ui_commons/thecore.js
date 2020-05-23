@@ -5,5 +5,4 @@
 //= require bootstrap
 //= require ie
 //= require timer
-//= require chartkick
-//= require Chart.bundle
+//= require apexcharts

@@ -1,8 +1,10 @@
 require 'helpers/thecore_ui_commons_helper'
+require 'helpers/charts_helper'
 module ThecoreUiCommons
   class Engine < ::Rails::Engine
     initializer "thecore_ui_commons.view_helpers" do
       ActiveSupport.on_load(:action_view) { include Helpers::ThecoreUiCommonsHelper }
+      ActiveSupport.on_load(:action_view) { include Helpers::ChartsHelper }
     end
 
     initializer 'thecore_ui_commons.add_to_migrations' do |app|
