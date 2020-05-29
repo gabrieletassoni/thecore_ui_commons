@@ -27,5 +27,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "thecore_background_jobs", "~> 2.0"
   spec.add_dependency 'serviceworker-rails',  "~> 0.5"
-  spec.add_dependency 'chartkick',  "~> 3.3"
+  spec.add_dependency 'groupdate', "~> 5.0"
+  spec.add_dependency 'apexcharts',  "~> 0.1"
 end

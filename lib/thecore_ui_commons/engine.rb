@@ -1,10 +1,5 @@
-require 'helpers/thecore_ui_commons_helper'
 module ThecoreUiCommons
   class Engine < ::Rails::Engine
-    initializer "thecore_ui_commons.view_helpers" do
-      ActiveSupport.on_load(:action_view) { include Helpers::ThecoreUiCommonsHelper }
-    end
-
     initializer 'thecore_ui_commons.add_to_migrations' do |app|
       unless app.root.to_s.match root.to_s
         # APPEND TO MAIN APP MIGRATIONS FROM THIS GEM
