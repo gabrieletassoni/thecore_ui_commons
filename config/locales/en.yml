@@ -1,5 +1,10 @@
 en:
   current_user: Current User
+  devise:
+    sessions:
+      new:
+        login: Login
+        password: Password
   hello: Hello World
   dashboard: Dashboard
   contact: Help us

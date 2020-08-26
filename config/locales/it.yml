@@ -7,6 +7,11 @@ it:
   sign_out: "Uscita"
   advanced: Impostazioni
   main_records: Anagrafiche
+  devise:
+    sessions:
+      new:
+        login: Login
+        password: Password
   errors:
     messages:
       invalid: contiene caratteri invalidi
