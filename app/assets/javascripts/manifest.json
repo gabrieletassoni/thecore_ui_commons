@@ -16,5 +16,6 @@
   "theme_color": "#3b4e59",
   "background_color": "#3b4e59",
   "orientation": "portrait",
-  "display": "standalone"
+  "display": "standalone",
+  "optional_permissions": ["clipboardWrite", "clipboardRead"]
 }
