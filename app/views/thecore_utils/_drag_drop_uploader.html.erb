@@ -1,0 +1,110 @@
+<%
+=begin%>
+  Call using, for example:
+  <%=render "thecore_utils/drag_drop_uploader", target: "drop-zone", file_upload_desc: I18n.t(:file_upload), file_upload_sub: I18n.t(:file_upload_subtitle, extensions: exts), url: rails_admin.send("#{action_name}_path")%>
+
+  All the parameters are mandatory: 
+    - target (The HTML element which will inherid the D&D functionality)
+    - file_upload_desc (Description of the upload functionality)
+    - file_upload_sub (Subtitle to the description -> A space where to put extra info)
+    - url (the action to perform async when files are dropped on the element.)
+<%
+=end%>
+
+<style>
+    /* layout.css Style */
+    .upload-drop-zone {
+        height: 200px;
+        border-width: 2px;
+        margin-bottom: 20px;
+    }
+
+    /* skin.css Style*/
+    .upload-drop-zone {
+        color: #ccc;
+        border-style: dashed;
+        border-color: #ccc;
+        line-height: 200px;
+        text-align: center
+    }
+
+    .upload-drop-zone.drop {
+        color: #222;
+        border-color: #222;
+    }
+</style>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong><%=file_upload_desc%></strong>
+        <small><%=file_upload_sub%></small>
+        <div class="pull-right" id="<%=target%>-upload-drop-zone-feedback">
+
+        </div>
+    </div>
+    <div class="panel-body">
+
+        <!-- Drop Zone -->
+        <div class="upload-drop-zone" id="<%=target%>">
+            <%=I18n.t :please_drag_and_drop_here%>
+        </div>
+
+        <div id="upload-status">
+        </div>
+    </div>
+</div>
+
+<script>
+    var fileupload = {
+        init: function () {
+            $('#<%=target%>').on("drop", this.ondrop);
+            $('#<%=target%>').on("dragover", this.ondragover);
+            $('#<%=target%>').on("dragleave", this.ondragleave);
+        },
+
+        beforeSuccess: function(){
+            console.log("beforeSuccess");
+        },
+
+        ondrop: function (e) {
+            // console.log(e)
+            e.preventDefault();
+            $('#<%=target%>').removeClass('drop');
+            $("#<%=target%>-upload-drop-zone-feedback").html("<i class='fa fa-spinner fa-spin '></i>");
+
+            // console.log(e.dataTransfer.files);
+            var fd = new FormData();
+            $.each(e.originalEvent.dataTransfer.files, function (i, file) {
+                fd.append('files[]', file);
+            });
+
+            $.ajax({
+                url: '<%=url%>',
+                data: fd,
+                processData: false,
+                contentType: false,
+                type: 'POST',
+                success: function () {
+                    fileupload.beforeSuccess();
+                    $("#<%=target%>-upload-drop-zone-feedback").html($('<i class="fa fa-check-square-o" aria-hidden="true"></i>').delay(3000).fadeOut(400));
+                },
+                error: function () {
+                    $("#<%=target%>-upload-drop-zone-feedback").html($('<i class="fa fa-exclamation-circle" aria-hidden="true"></i>').delay(3000).fadeOut(400));
+                }
+            });
+            // startUpload(e.dataTransfer.files)
+        },
+
+        ondragover: function () {
+            $('#<%=target%>').addClass('drop');
+            return false;
+        },
+
+        ondragleave: function () {
+            $('#<%=target%>').removeClass('drop');
+            return false;
+        }
+
+    };
+    fileupload.init();
+</script>
