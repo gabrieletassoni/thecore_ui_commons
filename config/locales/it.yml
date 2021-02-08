@@ -1,4 +1,5 @@
 it:
+  import_success: Importazione completata con successo
   current_user: Utente corrente
   hello: "Ciao Mondo"
   dashboard: "Pannello di controllo"
