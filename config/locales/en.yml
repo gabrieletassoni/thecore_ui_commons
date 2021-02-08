@@ -1,4 +1,9 @@
 en:
+  file_upload: Upload description, please add a translation for the element called file_upload in your translation file.
+  file_upload_subtitle: Descrizione aggiuntiva, prego aggiungere una traduzione per file_upload_subtitle al tuo file delle traduzioni.
+  loading: Caricamento
+  please_drag_and_drop_here: Drag and Drop here the files to import
+  import_success: Import Successful!
   current_user: Current User
   devise:
     sessions:
