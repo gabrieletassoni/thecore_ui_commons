@@ -12,15 +12,10 @@
 =end%>
 
 <style>
-    /* layout.css Style */
     .upload-drop-zone {
         height: 200px;
         border-width: 2px;
         margin-bottom: 20px;
-    }
-
-    /* skin.css Style*/
-    .upload-drop-zone {
         color: #ccc;
         border-style: dashed;
         border-color: #ccc;
@@ -55,12 +50,18 @@
 </div>
 
 <script>
+    function dndOn() {
+        $('#<%=target%>').on("drop", this.ondrop);
+        $('#<%=target%>').on("dragover", this.ondragover);
+        $('#<%=target%>').on("dragleave", this.ondragleave);
+    }
+    function dndOff() {
+        $('#<%=target%>').off("drop", this.ondrop);
+        $('#<%=target%>').off("dragover", this.ondragover);
+        $('#<%=target%>').off("dragleave", this.ondragleave);
+    }
     var fileupload = {
-        init: function () {
-            $('#<%=target%>').on("drop", this.ondrop);
-            $('#<%=target%>').on("dragover", this.ondragover);
-            $('#<%=target%>').on("dragleave", this.ondragleave);
-        },
+        init: dndOn,
 
         beforeSuccess: function(){
             console.log("beforeSuccess");
@@ -69,6 +70,7 @@
         ondrop: function (e) {
             // console.log(e)
             e.preventDefault();
+            dndOff();
             $('#<%=target%>').removeClass('drop');
             $("#<%=target%>-upload-drop-zone-feedback").html("<i class='fa fa-spinner fa-spin '></i>");
 
@@ -87,9 +89,11 @@
                 success: function () {
                     fileupload.beforeSuccess();
                     $("#<%=target%>-upload-drop-zone-feedback").html($('<i class="fa fa-check-square-o" aria-hidden="true"></i>').delay(3000).fadeOut(400));
+                    dndOn();
                 },
                 error: function () {
                     $("#<%=target%>-upload-drop-zone-feedback").html($('<i class="fa fa-exclamation-circle" aria-hidden="true"></i>').delay(3000).fadeOut(400));
+                    dndOn();
                 }
             });
             // startUpload(e.dataTransfer.files)
