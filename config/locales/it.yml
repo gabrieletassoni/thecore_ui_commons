@@ -1,6 +1,7 @@
 it:
   file_upload: Descrizione della procedura, prego aggiungere una traduzione per file_upload al tuo file delle traduzioni.
   file_upload_subtitle: Descrizione aggiuntiva, prego aggiungere una traduzione per file_upload_subtitle al tuo file delle traduzioni.
+  dont_leve_or_drag_here: Upload in corso, si prega di non lasciare la pagina o trascinare qui altri file.
   loading: Caricamento
   run_import: Forza l'importazione
   please_drag_and_drop_here: Trascinare qui i file da importare

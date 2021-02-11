@@ -3,6 +3,8 @@ require 'thecore_background_jobs' # This brings backend commons also.
 require 'serviceworker-rails'
 require "groupdate"
 require "apexcharts"
+require "poppler"
+require "image_processing"
 
 require 'concerns/thecore_ui_commons_user'
 
