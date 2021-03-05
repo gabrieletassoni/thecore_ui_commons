@@ -31,7 +31,7 @@
         <div class="col-md-4 col-md-offset-4 text-center">
           <img class="main-menu-app-logo" style="width: 25%; max-width: 152px" src="<%= image_url('logo.png') %>"/>
         </div>
-        <%- unless flash.empty? %>
+        <%- unless flash.blank? %>
         <div class="col-md-4 col-md-offset-4" style="margin-top: 1em;">
           <%= render partial: 'shared/flash' %>
         </div>
