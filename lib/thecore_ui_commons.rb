@@ -3,7 +3,7 @@ require 'thecore_background_jobs' # This brings backend commons also.
 require 'serviceworker-rails'
 require "groupdate"
 require "apexcharts"
-require "gtk3"
+# require "gtk3"
 require "cairo"
 require "poppler"
 require "image_processing"
