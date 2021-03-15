@@ -11,7 +11,7 @@ module ThecoreUiCommonsUser
         attr_writer :login
         
         def login
-            @login || self.username || self.email
+            @login || (self.username rescue self.email)
         end
         # Use login
         def self.find_first_by_auth_conditions(warden_conditions)
