@@ -20,3 +20,12 @@
 #new_user div {
     margin-bottom: .5em;
 }
+
+.alert {
+    position:fixed; 
+    bottom: 1em; 
+    right: 1em; 
+    width: 20vw;
+    z-index:9999; 
+    border-radius: 1em;
+}
