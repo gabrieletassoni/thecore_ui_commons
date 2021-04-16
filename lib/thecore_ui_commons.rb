@@ -19,7 +19,7 @@ module ThecoreUiCommons
   # Your code goes here...
 
 	def self.save_files files
-		# Rails.logger.debug "AAAAAAAAAAA: POST?"
+		Rails.logger.debug "AAAAAAAAAAA: POST?"
 		files.each do |pic|
 			# Rails.logger.debug "AAAAAAAAAAA: EACH PIC: #{pic.inspect}"
 			upload_dir = Rails.root.join(Settings.ns(:importer).import_from_folder, 'uploads')
@@ -27,6 +27,7 @@ module ThecoreUiCommons
 			# Rails.logger.debug "AAAAAAAAAAA: Fatto MKDIR di #{upload_dir}"
 			file_to_upload = Rails.root.join(upload_dir, "uploaded-#{Time.now.strftime("%Y%m%d%H%M%S%L")}-#{pic.original_filename}")
 			# Rails.logger.debug "AAAAAAAAAAA: File da uploadare #{file_to_upload}"
+			# Rails.logger.debug "AAAAAAAAAAA: File da uploadare esiste? #{File.exists?(file_to_upload)}"
 			File.open(file_to_upload, 'wb') do |file|
 				# Rails.logger.debug "AAAAAAAAAAAAAAAAAA: Dentro alla scrittura"
 				file.write(pic.read)

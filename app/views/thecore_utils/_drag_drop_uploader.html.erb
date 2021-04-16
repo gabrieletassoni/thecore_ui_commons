@@ -38,6 +38,12 @@
         background-color: darkred;
         color: white;
     }
+
+    .progress-bar {
+        /* Initial width of the progress bar */
+        width: 0%;
+        background-color: lightgrey;
+    }
 </style>
 
 <div class="panel panel-default">
@@ -54,7 +60,9 @@
         <div class="upload-drop-zone" id="<%=target%>">
             
         </div>
-
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar">0%</div>
+        </div> 
         <div id="upload-status">
         </div>
     </div>
@@ -111,6 +119,26 @@
                 error: function () {
                     $("#<%=target%>-upload-drop-zone-feedback").html($('<i class="fa fa-exclamation-circle" aria-hidden="true"></i>').delay(3000).fadeOut(400));
                     fileupload.init();
+                },
+                xhr: function () {
+                    // Credit to https://stackoverflow.com/a/57213032 
+                    var xhr = new XMLHttpRequest();
+
+                    xhr.upload.addEventListener('progress', function(e){
+                        if(e.lengthComputable){
+                            var uploadPercent = e.loaded / e.total;
+                            uploadPercent = (uploadPercent * 100);
+
+                            $('.progress-bar').text(uploadPercent.toFixed(2) + '%');
+                            $('.progress-bar').width(uploadPercent + '%');
+
+                            if(uploadPercent == 100){
+                                $('.progress-bar').text('Completed');
+                            }
+                        }
+                    }, false);
+
+                    return xhr;
                 }
             });
             // startUpload(e.dataTransfer.files)
