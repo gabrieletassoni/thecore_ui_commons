@@ -1,4 +1,4 @@
 it:
     activerecord:
         models:
-            rails_admin_settings/setting: Configurations
+            thecore_settings/setting: Configurations
