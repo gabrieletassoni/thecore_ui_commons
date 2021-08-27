@@ -1,8 +1,3 @@
-//= require jquery
-//= require jquery-ui
-//= require jquery-ui/widget
-//= require jquery-ui/widgets/dialog
-//= require bootstrap
 //= require ie
 //= require timer
 //= require apexcharts
