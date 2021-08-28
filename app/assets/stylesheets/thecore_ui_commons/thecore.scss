@@ -29,3 +29,15 @@
     z-index:9999; 
     border-radius: 1em;
 }
+
+
+trix-editor {
+    background-color: white;
+
+}
+
+@media (min-width: 768px) {
+    .col-sm-10.controls {
+        width: auto !important;
+    }
+}
