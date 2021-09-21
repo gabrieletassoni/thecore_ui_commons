@@ -1,3 +1,4 @@
 puts "Loading ThecoreUiCommons seeds"
-Settings.ns(:importer).import_from_folder = "tmp/imports"
-Settings.ns(:importer).extension = "txt"
+
+Thecore::Seed.save_setting :importer, :import_from_folder, "tmp/imports"
+Thecore::Seed.save_setting :importer, :extension, "txt"
