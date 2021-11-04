@@ -1,4 +1,4 @@
-<div class="col-md-4 col-md-offset-4" id="login-form">
+<div class=login-container id="login-form">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.text_field :login, autofocus: true, :class => "form-control", placeholder: t("devise.sessions.new.login") %>
