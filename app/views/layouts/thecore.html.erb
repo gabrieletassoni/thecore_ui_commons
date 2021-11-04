@@ -32,14 +32,14 @@
         <div class="logos">
           <img class="main-menu-app-logo" src="<%= image_url('customer_logo.svg') %>"/>
         </div>
-        <%- unless flash.blank? %>
-        <div class="flashes">
-          <%= render partial: 'shared/flash' %>
-        </div>
-        <%-end%>
         <%= yield %>
       </div>
     </div>
+
+
+    <%- unless flash.blank? %>
+      <%= render partial: 'shared/flash' %>
+    <%-end%>
 
     <%= render 'layouts/footer' %>
   </body>
