@@ -8,7 +8,7 @@ it:
   import_success: Importazione completata con successo
   current_user: Utente corrente
   hello: "Ciao Mondo"
-  dashboard: "Pannello di controllo"
+  dashboard: "Pagina Iniziale"
   contact: "Aiutaci a Migliorare"
   manage: "Gestione"
   sign_out: "Uscita"
