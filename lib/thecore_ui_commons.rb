@@ -4,8 +4,8 @@ require 'serviceworker-rails'
 require "groupdate"
 require "apexcharts"
 # require "gtk3"
-require "cairo"
-require "poppler"
+# require "cairo"
+# require "poppler"
 require "image_processing"
 
 require 'concerns/thecore_ui_commons_user'
