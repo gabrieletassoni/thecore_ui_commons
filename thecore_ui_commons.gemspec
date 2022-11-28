@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  spec.add_dependency "thecore_background_jobs", "~> 2.2"
+  spec.add_dependency "thecore_background_jobs", "~> 3.0"
   spec.add_dependency 'serviceworker-rails',  "~> 0.5"
   spec.add_dependency 'groupdate', "~> 5.0"
   spec.add_dependency 'apexcharts',  "~> 0.1"
