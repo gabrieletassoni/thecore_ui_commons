@@ -10,7 +10,11 @@
     <%= tag("link", rel: "manifest", href: asset_path("manifest.json", skip_pipeline: true)) %>
     <meta name="turbolinks-cache-control" content="no-cache">
 
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%
+=begin%>
+ <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
+<%
+=end%>
     <%# Getting all the assets needed by thecore from all the gems %>
     <%# javascript_include_tag('thecore_ui_commons/thecore-devise', 'data-turbolinks-track' => true)%>
     <%= get_asset_tags_for("thecore")%>
