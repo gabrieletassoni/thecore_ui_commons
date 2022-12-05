@@ -10,17 +10,11 @@
     <%= tag("link", rel: "manifest", href: asset_path("manifest.json", skip_pipeline: true)) %>
     <meta name="turbolinks-cache-control" content="no-cache">
 
-    <%
-=begin%>
- <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
-<%
-=end%>
     <%# Getting all the assets needed by thecore from all the gems %>
     <%# javascript_include_tag('thecore_ui_commons/thecore-devise', 'data-turbolinks-track' => true)%>
     <%= get_asset_tags_for("thecore")%>
     <%# stylesheet_link_tag('application', media: 'all', 'data-turbolinks-track' => true) if (Rails.application.assets || ::Sprockets::Railtie.build_environment(Rails.application)).find_asset("application.css")%>
-    <%= javascript_include_tag('application', 'data-turbolinks-track' => true) if (Rails.application.assets || ::Sprockets::Railtie.build_environment(Rails.application)).find_asset("application.js") %>
-
+    <%= javascript_include_tag('application', 'data-turbo-track' => true) if (Rails.application.assets || ::Sprockets::Railtie.build_environment(Rails.application)).find_asset("application.js") %>
     
     <%# favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', sizes: "180x180" %>
     <%# favicon_link_tag 'favicon-32x32.png', rel: 'icon', sizes: "32x32" %>
