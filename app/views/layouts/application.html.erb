@@ -8,24 +8,21 @@
     <title><%= Settings.app_name rescue "Thecore" %></title>
 
     <%= tag("link", rel: "manifest", href: asset_path("manifest.json", skip_pipeline: true)) %>
-    <meta name="turbolinks-cache-control" content="no-cache">
+    <meta name="turbo-cache-control" content="no-cache">
 
-    <%# Getting all the assets needed by thecore from all the gems %>
-    <%# javascript_include_tag('thecore_ui_commons/thecore-devise', 'data-turbolinks-track' => true)%>
+    <!-- Getting all the assets needed by thecore from all the gems //-->
     <%= get_asset_tags_for("thecore")%>
-    <%# stylesheet_link_tag('application', media: 'all', 'data-turbolinks-track' => true) if (Rails.application.assets || ::Sprockets::Railtie.build_environment(Rails.application)).find_asset("application.css")%>
+
+    <!-- Getting all the CSS and JS assets from application JS //-->
+    <%= stylesheet_link_tag('application', media: 'all', 'data-turbo-track' => true) if (Rails.application.assets || ::Sprockets::Railtie.build_environment(Rails.application)).find_asset("application.css")%>
     <%= javascript_include_tag('application', 'data-turbo-track' => true) if (Rails.application.assets || ::Sprockets::Railtie.build_environment(Rails.application)).find_asset("application.js") %>
     
-    <%# favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', sizes: "180x180" %>
-    <%# favicon_link_tag 'favicon-32x32.png', rel: 'icon', sizes: "32x32" %>
-    <%# favicon_link_tag 'favicon-16x16.png', rel: 'icon', sizes: "16x16" %>
-    <%# favicon_link_tag 'safari-pinned-tab.svg', rel: 'mask-icon', color: "#5bbad5" %>
     <meta name="theme-color" content="#3b4e59">
 
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class="jumbotron vertical-center">
+    <div class="jumbotron">
       <div class="container">
         <div class="logos">
           <%=render partial: 'layouts/logos'%>

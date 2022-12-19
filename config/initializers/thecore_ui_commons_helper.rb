@@ -9,13 +9,13 @@ module Helpers
                 base_s = Dir["#{base}.{css,scss}"]
                 base_j = Dir["#{base}.js"]
                 
-                (out << stylesheet_link_tag("#{get_folder base_s}/#{basename}", media: 'all', 'data-turbolinks-track' => true) if base_s.any?) rescue nil
-                (out << javascript_include_tag("#{get_folder base_j}/#{basename}", 'data-turbolinks-track' => true) if base_j.any?) rescue nil
+                (out << stylesheet_link_tag("#{get_folder base_s}/#{basename}", media: 'all', 'data-turbo-track' => true) if base_s.any?) rescue nil
+                (out << javascript_include_tag("#{get_folder base_j}/#{basename}", 'data-turbo-track' => true) if base_j.any?) rescue nil
             end
 
             # Application level assets
-            (out << stylesheet_link_tag('application', media: 'all', 'data-turbolinks-track' => true)) rescue nil
-            (out << javascript_include_tag('application', 'data-turbolinks-track' => true)) rescue nil
+            (out << stylesheet_link_tag('application', media: 'all', 'data-turbo-track' => true)) rescue nil
+            (out << javascript_include_tag('application', 'data-turbo-track' => true)) rescue nil
 
             out.join("\n").html_safe
         end
