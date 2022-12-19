@@ -28,11 +28,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'haml'
   spec.add_dependency "haml-rails"
   spec.add_dependency "thecore_background_jobs", "~> 3.0"
-  spec.add_dependency 'serviceworker-rails',  "~> 0.5"
-  spec.add_dependency 'groupdate', "~> 5.0"
-  spec.add_dependency 'apexcharts',  "~> 0.1"
-  # spec.add_dependency 'gtk3',  "~> 3.4"
-  # spec.add_dependency 'cairo',  "~> 1.17"
-  # spec.add_dependency 'poppler',  "~> 3.4"
-  spec.add_dependency "image_processing", '~> 1.2'
+  spec.add_dependency 'serviceworker-rails'
+  spec.add_dependency 'groupdate'
+  spec.add_dependency 'apexcharts'
+  spec.add_dependency "image_processing"
 end
