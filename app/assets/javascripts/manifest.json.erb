@@ -1,5 +1,5 @@
 {
-  "short_name": "TheCore",
+  "short_name": "<%= ThecoreSettings::Setting.where(ns: "main", key: "app_name").first.raw %>",
   "icons": [
       {
           "src": "<%= image_path 'android-chrome-192x192.png' %>",
@@ -12,9 +12,9 @@
           "type": "image/png"
       }
   ],
-  "name": "Gabriele Tassoni's TheCore",
-  "theme_color": "#3b4e59",
-  "background_color": "#3b4e59",
+  "name": "<%= ThecoreSettings::Setting.where(ns: "main", key: "app_name").first.raw %>",
+  "theme_color": "<%= ThecoreSettings::Setting.where(ns: "theme", key: "main_color").first.raw %>",
+  "background_color": "<%= ThecoreSettings::Setting.where(ns: "theme", key: "main_color").first.raw %>",
   "orientation": "portrait",
   "display": "standalone",
   "optional_permissions": ["clipboardWrite", "clipboardRead"]

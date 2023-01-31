@@ -1,0 +1,10 @@
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= Settings.app_name rescue "Thecore" %></title>
+    <link rel="icon" type="image/x-icon" href="<%= image_path 'favicon.ico' %>">
+    <%= tag("link", rel: "manifest", href: asset_path("manifest.json", skip_pipeline: true)) %>
+    <meta name="turbo-cache-control" content="no-cache">
+    <meta name="theme-color" content="#3b4e59">
+    <%= csrf_meta_tags %>
+    

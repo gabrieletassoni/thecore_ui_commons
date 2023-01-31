@@ -1,37 +1,25 @@
 <!DOCTYPE html>
 <html lang="<%=I18n.locale%>">
   <head>
-    <meta charset="UTF-8">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><%= Settings.app_name rescue "Thecore" %></title>
-
-    <%= tag("link", rel: "manifest", href: asset_path("manifest.json", skip_pipeline: true)) %>
-    <meta name="turbo-cache-control" content="no-cache">
-
-    <meta name="theme-color" content="#3b4e59">
-
-    <%= csrf_meta_tags %>
-
+    <%= render partial: "layouts/head" %>
     <%= stylesheet_link_tag "devise/sessions.css", media: :all, data: {'turbo-track': 'reload'} %>
     <%= javascript_include_tag "devise/sessions.js", defer: true, data: {'turbo-track': 'reload'} %>
   </head>
   <body>
-    <div class="jumbotron">
-      <div class="container">
-        <div class="logos">
-          <%=render partial: 'layouts/logos'%>
-        </div>
-        <%= yield %>
-      </div>
-    </div>
-
-
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <%- unless flash.blank? %>
       <%= render partial: 'shared/flash' %>
     <%-end%>
-
-    <%= render 'layouts/footer' %>
+    <div class="jumbotron">
+      <div class="container">
+        <div class="contained">
+          <div class="logos">
+            <%=render partial: 'layouts/logos'%>
+          </div>
+          <%= yield %>
+        </div>
+      </div>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
