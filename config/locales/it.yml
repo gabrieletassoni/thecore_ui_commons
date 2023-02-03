@@ -1,27 +1,42 @@
 it:
-  file_upload: Descrizione della procedura, prego aggiungere una traduzione per file_upload al tuo file delle traduzioni.
-  file_upload_subtitle: Descrizione aggiuntiva, prego aggiungere una traduzione per file_upload_subtitle al tuo file delle traduzioni.
-  dont_leve_or_drag_here: Upload in corso, si prega di non lasciare la pagina o trascinare qui altri file.
-  loading: Caricamento
-  run_import: Forza l'importazione
-  please_drag_and_drop_here: Trascinare qui i file da importare
-  import_success: Importazione completata con successo
-  current_user: Utente corrente
-  hello: "Ciao Mondo"
-  dashboard: "Pagina Iniziale"
-  contact: "Aiutaci a Migliorare"
-  manage: "Gestione"
-  sign_out: "Uscita"
-  advanced: Impostazioni
-  main_records: Anagrafiche
+  admin:
+    actions:
+      charts:
+        menu: Analisi
+        title: Grafici
+        breadcrumb: Grafici  
+    links:
+      label: Collegamenti
+    settings:
+      label: Impostazioni
+      advanced: Avanzate
+      registries: Anagrafiche
+      operations: Operatività      
+    tools:
+      label: "Strumenti"
+  advanced: Impostazioni        
+  contact: "Aiutaci a Migliorare"        
+  current_user: Utente corrente        
+  dashboard: "Pagina Iniziale"     
   devise:
     sessions:
       new:
         login: Login
-        password: Password
+        password: Password     
+  dont_leve_or_drag_here: Upload in corso, si prega di non lasciare la pagina o trascinare qui altri file. 
   errors:
     messages:
-      invalid: contiene caratteri invalidi
+      invalid: contiene caratteri invalidi   
+  file_upload: Descrizione della procedura, prego aggiungere una traduzione per file_upload al tuo file delle traduzioni.
+  file_upload_subtitle: Descrizione aggiuntiva, prego aggiungere una traduzione per file_upload_subtitle al tuo file delle traduzioni.
+  hello: "Ciao Mondo"  
+  import_success: Importazione completata con successo
+  loading: Caricamento
+  main_records: Anagrafiche  
+  manage: "Gestione"  
+  please_drag_and_drop_here: Trascinare qui i file da importare  
+  run_import: Forza l'importazione
+  sign_out: "Uscita"
   tiered_times:
     dd:
       zero: "0 Giorni"
@@ -39,18 +54,3 @@ it:
       zero: "0 Secondi"
       one: "%{count} Secondo"
       other: "%{count} Secondi"
-  admin:
-    links:
-      label: Collegamenti
-    tools:
-      label: "Strumenti"
-    settings:
-      label: Impostazioni
-      advanced: Avanzate
-      registries: Anagrafiche
-      operations: Operatività
-    actions:
-      charts:
-        menu: Analisi
-        title: Grafici
-        breadcrumb: Grafici

@@ -1,26 +1,42 @@
 en:
-  file_upload: Upload description, please add a translation for the element called file_upload in your translation file.
-  file_upload_subtitle: Descrizione aggiuntiva, prego aggiungere una traduzione per file_upload_subtitle al tuo file delle traduzioni.
-  dont_leve_or_drag_here: Uploading, please don't leave this page or Drag & Drop other files.
-  loading: Caricamento
-  please_drag_and_drop_here: Drag and Drop here the files to import
-  import_success: Import Successful!
+  admin:
+    actions:
+      charts:
+        menu: Analisys
+        title: Charts
+        breadcrumb: Charts
+    links:
+      label: Links        
+    settings:
+      label: Settings
+      advanced: Advanced
+      registries: Registries
+      operations: Operations  
+    tools:
+      label: Tools            
+  advanced: Advanced
+  contact: Help us
   current_user: Current User
+  dashboard: Dashboard
   devise:
     sessions:
       new:
         login: Login
-        password: Password
-  hello: Hello World
-  dashboard: Dashboard
-  contact: Help us
-  manage: Manage
-  sign_out: Sign Out 
-  advanced: Advanced
-  main_records: Registries
+        password: Password  
+  dont_leve_or_drag_here: Uploading, please don't leave this page or Drag & Drop other files.
   errors:
     messages:
       invalid: Invalid characters
+  file_upload: Upload description, please add a translation for the element called file_upload in your translation file.
+  file_upload_subtitle: Additional description, please add a translation for file_upload_subtitle to your translation file.
+  hello: Hello World  
+  import_success: Import Successful!
+  loading: Loading
+  main_records: Registries  
+  manage: Manage
+  please_drag_and_drop_here: Drag and Drop here the files to import
+  run_import: Force import
+  sign_out: Sign Out 
   tiered_times:
     dd:
       zero: "0 Days"
@@ -38,18 +54,3 @@ en:
       zero: "0 Seconds"
       one: "%{count} Second"
       other: "%{count} Seconds"
-  admin:
-    links:
-      label: Links
-    tools:
-      label: Tools
-    settings:
-      label: Settings
-      advanced: Advanced
-      registries: Registries
-      operations: Operations
-    actions:
-      charts:
-        menu: Analisys
-        title: Charts
-        breadcrumb: Charts
