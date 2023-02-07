@@ -1,44 +1,30 @@
-<%
-@text_color = Settings.ns(:theme).text_color
-@accents_color = Settings.ns(:theme).accents_color
-@background_color = Settings.ns(:theme).background_color
-@main_color = Settings.ns(:theme).main_color
-@shadows_color = Settings.ns(:theme).shadows_color
-
-@neutral_color = Settings.ns(:theme).neutral_color
-@success_color = Settings.ns(:theme).success_color
-@info_color = Settings.ns(:theme).info_color
-@danger_color = Settings.ns(:theme).danger_color
-@warning_color = Settings.ns(:theme).warning_color
-%>
-
 html, body {
     width: 100vw;
     height: 100vh;
 }
 body {
     margin: 0;
-    background-color: <%= @main_color %>;
+    background-color: #37505C;
     overflow: hidden;
 }
 /* unvisited link */
 a:link {
-  color: <%= @accents_color %>;
+  color: #F76F8E;
 }
 
 /* visited link */
 a:visited {
-  color: <%= @background_color %>;
+  color: #96616B;
 }
 
 /* mouse over link */
 a:hover {
-  color: <%= @text_color %>;
+  color: #FFEAD0;
 }
 
 /* selected link */
 a:active {
-  color: <%= @accents_color %>;
+  color: #F76F8E;
 }
 .container {
   display : flex;
@@ -51,10 +37,10 @@ a:active {
   display : flex;
   align-items : center;
   justify-content: center;
-  background-color: <%= @shadows_color %>;
+  background-color: #113537;
   width: 100vw;
   height: 2em;
-  color: <%= @text_color %>;
+  color: #FFEAD0;
   padding-top: 4px;
   padding-bottom: 4px;
 }
@@ -73,9 +59,9 @@ a:active {
   align-items : center;
   justify-content: space-evenly;
   width: 30vw;
-  background-color: <%= @shadows_color %>;
+  background-color: #113537;
   border-radius: 1em;
-  border: 1px solid <%= @background_color %>;
+  border: 1px solid #96616B;
   padding: 1em;
 }
 .contained div {
@@ -132,31 +118,31 @@ a:active {
 }
 
 .form-check-label {
-  color: <%= @text_color %>;
+  color: #FFEAD0;
 }
 
 .alert-warning {
-    color: <%= @shadows_color %>;
-    background-color: <%= @warning_color %>;
-    border-color: <%= @background_color %>;
+    color: #113537;
+    background-color: #F6BB42;
+    border-color: #96616B;
 }
 
 .alert-success {
-    color: <%= @shadows_color %>;
-    background-color: <%= @success_color %>;
-    border-color: <%= @background_color %>;
+    color: #113537;
+    background-color: #37BC9B;
+    border-color: #96616B;
 }
 
 .alert-danger {
-    color: <%= @shadows_color %>;
-    background-color: <%= @danger_color %>;
-    border-color: <%= @background_color %>;
+    color: #113537;
+    background-color: #E9573F;
+    border-color: #96616B;
 }
 
 .alert-info {
-    color: <%= @shadows_color %>;
-    background-color: <%= @info_color %>;
-    border-color: <%= @background_color %>;
+    color: #113537;
+    background-color: #CCCCCC;
+    border-color: #96616B;
 }
 
 .alert {
