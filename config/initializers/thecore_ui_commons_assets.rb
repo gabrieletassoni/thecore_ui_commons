@@ -6,6 +6,7 @@ Rails.application.configure do
         favicon.ico
         customer_logo.png
         logo.png
+        manifest.json
     )
     config.assets.precompile += %w( devise/sessions.css devise/sessions.js )
 end

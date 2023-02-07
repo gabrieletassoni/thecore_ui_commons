@@ -1,5 +1,5 @@
 {
-  "short_name": "<%= ThecoreSettings::Setting.where(ns: "main", key: "app_name").first.raw %>",
+  "short_name": "Thecore",
   "icons": [
       {
           "src": "<%= image_path 'android-chrome-192x192.png' %>",
@@ -12,9 +12,9 @@
           "type": "image/png"
       }
   ],
-  "name": "<%= ThecoreSettings::Setting.where(ns: "main", key: "app_name").first.raw %>",
-  "theme_color": "<%= ThecoreSettings::Setting.where(ns: "theme", key: "main_color").first.raw %>",
-  "background_color": "<%= ThecoreSettings::Setting.where(ns: "theme", key: "main_color").first.raw %>",
+  "name": "Thecore",
+  "theme_color": "#37505C",
+  "background_color": "#96616B",
   "orientation": "portrait",
   "display": "standalone",
   "optional_permissions": ["clipboardWrite", "clipboardRead"]
