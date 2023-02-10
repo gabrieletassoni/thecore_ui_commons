@@ -1,14 +1,9 @@
-require 'haml'
-require 'haml-rails'
-
-require 'thecore_background_jobs' # This brings backend commons also.
-# Rails
-require 'serviceworker-rails'
+require "thecore_backend_commons"
+require "haml"
+require "haml-rails"
+require "serviceworker-rails"
 require "groupdate"
 require "apexcharts"
-require "image_processing"
-
-require 'concerns/thecore_ui_commons_user'
 
 require "thecore_ui_commons/engine"
 

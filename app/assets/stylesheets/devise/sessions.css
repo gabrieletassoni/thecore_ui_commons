@@ -6,6 +6,10 @@ body {
     margin: 0;
     background-color: #37505C;
     overflow: hidden;
+    color: #FFEAD0;
+}
+h2 {
+  display: none;
 }
 /* unvisited link */
 a:link {
@@ -67,9 +71,8 @@ a:active {
 .contained div {
   margin-bottom: 1em;
 }
-.form-control {
+#user_password, #user_email {
     display: block;
-    width: 100%;
     height: 34px;
     padding: 6px 12px;
     font-size: 14px;
@@ -150,4 +153,33 @@ a:active {
     margin-bottom: 20px;
     border: 1px solid transparent;
     border-radius: 4px;
+}
+
+input[name=commit] {
+  color: white;
+  background-color: #ED6A16;
+  width: 100%;
+  border-color: #BD4B39;
+  border-radius: 2em;
+  -webkit-appearance: button;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
