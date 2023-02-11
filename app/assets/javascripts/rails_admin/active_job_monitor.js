@@ -1,0 +1,1 @@
+console.log("active_job_monitor in rails admin")
