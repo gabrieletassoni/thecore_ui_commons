@@ -4,7 +4,8 @@ module ConcernApplicationController
   extend ActiveSupport::Concern
   
   included do
-    protect_from_forgery prepend: true
+    # protect_from_forgery prepend: true
+    protect_from_forgery except: :sign_in,  prepend: true
     
     rescue_from CanCan::AccessDenied do |exception| 
       redirect_to main_app.root_url, alert: exception.message 
