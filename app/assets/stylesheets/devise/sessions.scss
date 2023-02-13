@@ -1,165 +1,177 @@
-html, body {
-    width: 100vw;
-    height: 100vh;
-}
+@import 'thecore_ui_commons/variables';
+@import 'thecore_ui_commons/alerts';
+
+html,
 body {
-    margin: 0;
-    background-color: #37505C;
-    overflow: hidden;
-    color: #FFEAD0;
+  width: 100vw;
+  height: 100vh;
 }
+
+body {
+  margin: 0;
+  // background-color: $primary;
+  background: linear-gradient(0deg, $primary 0%, $primary 35%, $background 100%);
+  overflow: hidden;
+  color: $shadows;
+}
+
 h2 {
   display: none;
 }
+
 /* unvisited link */
 a:link {
-  color: #F76F8E;
+  color: $link-color;
 }
 
 /* visited link */
 a:visited {
-  color: #96616B;
+  color: $link-color;
 }
 
 /* mouse over link */
 a:hover {
-  color: #FFEAD0;
+  color: $link-hover-color;
 }
 
 /* selected link */
 a:active {
-  color: #F76F8E;
+  color: $link-hover-color;
+  text-decoration: $link-hover-decoration;
 }
+
 .container {
-  display : flex;
+  display: flex;
   flex-direction: column;
-  align-items : center;
+  align-items: center;
   justify-content: space-evenly;
   min-height: calc(100vh - 2em);
 }
+
 #footer {
-  display : flex;
-  align-items : center;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  background-color: #113537;
+  background-color: $background;
   width: 100vw;
   height: 2em;
-  color: #FFEAD0;
+  color: $primary;
   padding-top: 4px;
   padding-bottom: 4px;
 }
+
 #footer img {
-    height: 2em;
+  height: 2em;
 }
-#main-menu-app-header, #main-menu-app-description {
+
+#main-menu-app-header,
+#main-menu-app-description {
   display: none;
 }
+
 #main-menu-app-logo {
   width: 10vw;
 }
+
 .contained {
-  display : flex;
+  display: flex;
   flex-direction: column;
-  align-items : center;
+  align-items: center;
   justify-content: space-evenly;
   width: 30vw;
-  background-color: #113537;
+  background-color: $body-bg;
   border-radius: 1em;
-  border: 1px solid #96616B;
+  border: 1px solid $body-bg;
   padding: 1em;
 }
+
 .contained div {
   margin-bottom: 1em;
 }
-#user_password, #user_email {
-    display: block;
-    height: 34px;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #555;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+
+#user_password,
+#user_email {
+  display: block;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: $text-highlight;
+  background-color: $background;
+  background-image: none;
+  border: 1px solid $gray;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
 }
 
 .btn-default {
-    color: #333;
-    background-color: #fff;
-    border-color: #ccc;
+  color: $gray-darker;
+  background-color: $text-highlight;
+  border-color: $gray;
 }
 
 .btn {
-    display: inline-block;
-    margin-bottom: 0;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    border-radius: 4px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .form-check-label {
-  color: #FFEAD0;
+  color: $gray-lighter;
 }
 
 .alert-warning {
-    color: #113537;
-    background-color: #F6BB42;
-    border-color: #96616B;
+  color: $gray-dark;
+  background-color: $brand-warning;
+  border-color: $brand-warning;
 }
 
 .alert-success {
-    color: #113537;
-    background-color: #37BC9B;
-    border-color: #96616B;
+  color: $gray-dark;
+  background-color: $brand-success;
+  border-color: $brand-success;
 }
 
 .alert-danger {
-    color: #113537;
-    background-color: #E9573F;
-    border-color: #96616B;
+  color: $gray-lighter;
+  background-color: $brand-danger;
+  border-color: $brand-danger;
 }
 
 .alert-info {
-    color: #113537;
-    background-color: #CCCCCC;
-    border-color: #96616B;
-}
-
-.alert {
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    border-radius: 4px;
+  color: #5c5c5c;
+  background-color: $brand-info;
+  border-color: $gray-dark;
 }
 
 input[name=commit] {
-  color: white;
-  background-color: #ED6A16;
+  color: $background;
+  background-color: $primary;
   width: 100%;
-  border-color: #BD4B39;
+  border-color: $primary;
   border-radius: 2em;
   -webkit-appearance: button;
   cursor: pointer;
