@@ -1,3 +1,4 @@
+puts "ApplicationController Concern from ThecoreUiCommons"
 require 'active_support/concern'
 
 module ConcernApplicationController

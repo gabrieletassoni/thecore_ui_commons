@@ -1,3 +1,4 @@
+puts "User Concern from ThecoreUiCommons"
 require 'active_support/concern'
 
 module ThecoreUiCommonsUserConcern
