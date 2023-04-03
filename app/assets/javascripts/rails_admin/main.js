@@ -1,1 +1,0 @@
-console.log("Rails Admin Main JS")
