@@ -1,4 +1,4 @@
 it:
     activerecord:
         models:
-            thecore_settings/setting: Configurations
+            thecore_settings/setting: Configurazioni
