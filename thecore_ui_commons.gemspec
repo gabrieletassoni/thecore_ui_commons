@@ -38,9 +38,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'image_processing', '~> 1.2'
   spec.add_dependency 'serviceworker-rails',  '~> 0.5'
 
-
-  spec.required_ruby_version = '>= 2.7.7'
-
   # TheCore
   spec.add_dependency "thecore_background_jobs", "~> 2.2"
 
