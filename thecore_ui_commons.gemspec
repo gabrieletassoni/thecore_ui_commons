@@ -1,36 +1,52 @@
-$:.push File.expand_path("lib", __dir__)
+# frozen_string_literal: true
+
+$LOAD_PATH.push File.expand_path('lib', __dir__)
 
 # Maintain your gem's version:
-require "thecore_ui_commons/version"
+require 'thecore_ui_commons/version'
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
-  spec.name        = "thecore_ui_commons"
+  spec.name        = 'thecore_ui_commons'
   spec.version     = ThecoreUiCommons::VERSION
-  spec.authors     = ["Gabriele Tassoni"]
-  spec.email       = ["gabriele.tassoni@gmail.com"]
-  spec.homepage    = "https://github.com/gabrieletassoni/thecore_ui_commons"
-  spec.summary     = "Common artifacts for the UIs."
-  spec.description = "Engine to serve configurations and rails module useful for all the UIs."
-  spec.license     = "MIT"
+  spec.authors     = ['Gabriele Tassoni']
+  spec.email       = ['gabriele.tassoni@gmail.com']
+  spec.homepage    = 'https://github.com/gabrieletassoni/thecore_ui_commons'
+  spec.summary     = 'Common artifacts for the UIs.'
+  spec.description = 'Engine to serve configurations and rails module useful for all the UIs.'
+  spec.license     = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "https://rubygems.org"
+    spec.metadata['allowed_push_host'] = 'https://rubygems.org'
   else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
+    raise 'RubyGems 2.0 or newer is required to protect against ' \
+      'public gem pushes.'
   end
 
-  spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  spec.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
+  spec.required_ruby_version = '>= 2.7.7'
+
+  # Thecore
+  spec.add_dependency 'thecore_background_jobs', '~> 2.2'
+
+  # Image processing
+  spec.add_dependency 'apexcharts', '~> 0.1'
+  spec.add_dependency 'groupdate', '~> 5.0'
+  spec.add_dependency 'image_processing', '~> 1.2'
+  spec.add_dependency 'serviceworker-rails',  '~> 0.5'
+
+  # TheCore
   spec.add_dependency "thecore_background_jobs", "~> 2.2"
+
+  # Other gems
   spec.add_dependency 'serviceworker-rails',  "~> 0.5"
   spec.add_dependency 'groupdate', "~> 5.0"
   spec.add_dependency 'apexcharts',  "~> 0.1"
+  spec.add_dependency "image_processing", '~> 1.2'
   # spec.add_dependency 'gtk3',  "~> 3.4"
   # spec.add_dependency 'cairo',  "~> 1.17"
   # spec.add_dependency 'poppler',  "~> 3.4"
-  spec.add_dependency "image_processing", '~> 1.2'
 end
