@@ -8,7 +8,7 @@ How to use my plugin.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'thecore_ui_commons'
+gem "thecore_ui_commons"
 ```
 
 And then execute:

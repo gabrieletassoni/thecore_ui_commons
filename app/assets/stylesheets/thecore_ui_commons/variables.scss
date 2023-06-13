@@ -1,0 +1,48 @@
+//** COLORS
+$primary: #2e5670 !default;
+//** Background color for `<body>`.
+$body-bg: #fff !default;
+//** Background on other Elements
+$background: #f1f1f1 !default;
+$shadows: #1c3444 !default;
+$text-highlight: #fad23c !default;
+
+$neutral: #999999 !default;
+$success: #37BC9B !default;
+$info: #ebebeb !default;
+$warning: #F6BB42 !default;
+$danger: #E9573F !default;
+
+// COMPUTED FROM VARS
+$element: $primary !default;
+$element-text: darken($element, 70%) !default;;
+$element-border: darken($element, 70%) !default;
+$element-text-highlight: lighten($element-text, 10%) !default;
+
+//## Gray and brand colors for use across Bootstrap.
+// Gray Color
+$gray-base: $neutral !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              lighten($gray-base, 20%) !default;   // #333
+$gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+
+$brand-primary:         darken($neutral, 6.5%) !default; // #337ab7
+$brand-success:         $success !default;
+$brand-info:            $info !default;
+$brand-warning:         $warning !default;
+$brand-danger:          $danger !default;
+
+//** Global text color on `<body>`
+$text: $gray-dark !default;
+$text-color: $text !default;
+
+$link: $text-color !default;
+$link-highlight: lighten($link, 10%) !default;
+//** Global textual link color.
+$link-color:            $brand-primary !default;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      darken($link-color, 15%) !default;
+//** Link hover decoration.
+$link-hover-decoration: underline !default;

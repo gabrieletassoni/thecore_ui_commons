@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="<%=I18n.locale%>">
+  <head>
+    <%= render partial: "layouts/head" %>
+    <%= stylesheet_link_tag "devise/sessions.css", media: :all, data: {'turbo-track': 'reload'} %>
+    <%= javascript_include_tag "devise/sessions.js", defer: true, data: {'turbo-track': 'reload'} %>
+  </head>
+  <body>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <%- unless flash.blank? %>
+      <%= render partial: 'shared/flash' %>
+    <%-end%>
+    <div class="jumbotron">
+      <div class="container">
+        <div class="contained">
+          <div class="logos">
+            <%=render partial: 'layouts/logos'%>
+          </div>
+          <%= yield %>
+        </div>
+      </div>
+      <%= render 'layouts/footer' %>
+    </div>
+  </body>
+</html>
