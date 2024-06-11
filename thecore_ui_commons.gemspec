@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "thecore_backend_commons", "~> 3.0"
   spec.add_dependency "haml", "~> 6.0"
   spec.add_dependency "haml-rails", "~> 2.1"
-  spec.add_dependency "serviceworker-rails", "~> 0.6"
+  # spec.add_dependency "serviceworker-rails", "~> 0.6"
   spec.add_dependency "groupdate", "~> 6.0"
   spec.add_dependency "apexcharts", "~> 0.2"
 end

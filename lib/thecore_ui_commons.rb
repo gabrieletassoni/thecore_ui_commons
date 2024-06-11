@@ -1,7 +1,7 @@
 require "thecore_backend_commons"
 require "haml"
 require "haml-rails"
-require "serviceworker-rails"
+# require "serviceworker-rails"
 require "groupdate"
 require "apexcharts"
 
