@@ -5,7 +5,6 @@ Rails.application.config.assets.precompile += %w(
     favicon.ico
     customer_logo.png
     logo.png
-    manifest.json
     devise/sessions.css 
     devise/sessions.js
     thecore_ui_commons.js
