@@ -3,6 +3,5 @@ Rails.application.configure do
         # Controllers
         ApplicationController.send(:include, ConcernCommonApplicationController)
         User.send(:include, ThecoreUiCommonsUserConcern)
-        RailsAdmin::ApplicationController.send(:include, ConcernCommonApplicationController)
     end
 end
