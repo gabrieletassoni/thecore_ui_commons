@@ -1,4 +1,4 @@
-Rails.logger.debug "ApplicationController Concern from ThecoreUiCommons"
+puts "CommonApplicationController Concern from ThecoreUiCommons"
 require 'active_support/concern'
 
 module ConcernCommonApplicationController
