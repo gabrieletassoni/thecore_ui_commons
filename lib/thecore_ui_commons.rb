@@ -3,7 +3,8 @@ require "haml"
 require "haml-rails"
 # require "serviceworker-rails"
 require "groupdate"
-require "apexcharts"
+# require "apexcharts"
+require "rails_charts"
 
 require "thecore_ui_commons/engine"
 
