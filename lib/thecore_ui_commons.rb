@@ -5,6 +5,7 @@ require "haml-rails"
 require "groupdate"
 # require "apexcharts"
 require "rails_charts"
+require "echarts/speedometer"
 
 require "thecore_ui_commons/engine"
 
