@@ -76,6 +76,11 @@ module Echarts
 
       # The gauge chart
       raw_js_options = {
+        toolbox: {
+          feature: {
+            saveAsImage: {},
+          }
+        },
         series: [
           {
             type: "gauge",
