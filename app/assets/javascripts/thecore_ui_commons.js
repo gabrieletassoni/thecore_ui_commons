@@ -1,1 +1,2 @@
-// This file can be overridden in your engine
+//= require echarts.min.js
+//= require echarts/theme/dark.js
