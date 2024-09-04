@@ -66,7 +66,7 @@ module Echarts
     # @param color_error [String] The color for values outside the range.
     # @param color_generic [String] The color for generic values.
     # @return [Hash] The options for the gauge chart.
-    def self.get_config(value, min, max, lower_bound, upper_bound, measure_unit, name, color_ok = "limegreen", color_error = "tomato", color_generic = "dodgerblue")
+    def self.get_config(value, min, max, lower_bound, upper_bound, title, subtitle, vLabel, color_ok = "limegreen", color_error = "tomato", color_generic = "dodgerblue")
       min_in_percentage = compute_percentage(min, lower_bound, upper_bound)
       max_in_percentage = compute_percentage(max, lower_bound, upper_bound)
       value_in_percentage = compute_percentage(value, lower_bound, upper_bound)
@@ -76,6 +76,13 @@ module Echarts
 
       # The gauge chart
       raw_js_options = {
+        grid: {
+          top: 80,
+        },
+        title: {
+          text: title,
+          subtext: subtitle,
+        },
         toolbox: {
           feature: {
             saveAsImage: {},
@@ -127,7 +134,7 @@ module Echarts
             data: [
               {
                 value: value,
-                name: name,
+                name: vLabel,
               },
             ],
           },
