@@ -36,9 +36,9 @@ module Echarts
         yAxis: {
           type: "value",
           name: yLabel,
-        # Set Upper and Lower bounds to the upper and lower bounds of the data
-        #  min: lower_bound,
-        #  max: upper_bound,
+          # Set Upper and Lower bounds to the upper and lower bounds of the data
+          min: lower_bound,
+          max: upper_bound,
         },
         series: stacks.map.with_index do |stack, index|
           {
