@@ -20,7 +20,6 @@ module Echarts
         toolbox: {
           feature: {
             saveAsImage: {},
-            saveAsImage: {},
             dataView: {},
             dataZoom: {},
             restore: {},
