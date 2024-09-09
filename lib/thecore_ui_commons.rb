@@ -10,6 +10,7 @@ require "echarts/vector"
 require "echarts/multiple_vectors"
 require "echarts/binary"
 require "echarts/binary_series"
+require "echarts/map"
 
 require "thecore_ui_commons/engine"
 
