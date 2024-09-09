@@ -8,6 +8,8 @@ require "rails_charts"
 require "echarts/speedometer"
 require "echarts/vector"
 require "echarts/multiple_vectors"
+require "echarts/binary"
+require "echarts/binary_series"
 
 require "thecore_ui_commons/engine"
 
