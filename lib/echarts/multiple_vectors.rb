@@ -29,8 +29,13 @@ module Echarts
           trigger: "axis",
         },
         xAxis: {
-          type: "category",
+          type: "value",
           name: xLabel,
+          boundaryGap: false,
+          # get first value of each stack present in the stacks array and use it as the x axis
+          # Stacks is in the form [[[x1, y1], [x2, y2], [x3, y3], ...], [[x1, y1], [x2, y2], [x3, y3], ...], ...]
+          # data must be [x1, x2, x3, ...]
+          data: stacks.map { |stack| stack.map(&:first) }.flatten.uniq.sort,
         },
         yAxis: {
           type: "value",
