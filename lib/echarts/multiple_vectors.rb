@@ -1,8 +1,13 @@
 module Echarts
   module MultipleVectors
     def self.get_config(stacks, legend, min, max, lower_bound, upper_bound, title, subtitle, xLabel, yLabel, color_min = "limegreen", color_max = "tomato")
-      Rails.logger.debug("Legend: #{legend}\nLegend size: #{legend.size}")
-      Rails.logger.debug("Stacks size: #{stacks.size}")
+      # Rails.logger.debug("Legend: #{legend}\nLegend size: #{legend.size}")
+      # Rails.logger.debug("Stacks size: #{stacks.size}")
+      # get first value of each stack present in the stacks array and use it as the x axis
+      # Stacks is in the form [[[x1, y1], [x2, y2], [x3, y3], ...], [[x1, y1], [x2, y2], [x3, y3], ...], ...]
+      # data must be [x1, x2, x3, ...]
+      x_values = stacks.map { |stack| stack.map(&:first) }.flatten.uniq.sort
+      # Rails.logger.debug("X Values: #{x_values}")
       {
         grid: {
           top: 80,
@@ -32,10 +37,9 @@ module Echarts
           type: "value",
           name: xLabel,
           boundaryGap: false,
-          # get first value of each stack present in the stacks array and use it as the x axis
-          # Stacks is in the form [[[x1, y1], [x2, y2], [x3, y3], ...], [[x1, y1], [x2, y2], [x3, y3], ...], ...]
-          # data must be [x1, x2, x3, ...]
-          data: stacks.map { |stack| stack.map(&:first) }.flatten.uniq.sort,
+          data: x_values,
+          min: x_values.first.floor,
+          max: x_values.last.ceil,
         },
         yAxis: {
           type: "value",

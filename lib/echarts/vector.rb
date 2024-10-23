@@ -1,6 +1,7 @@
 module Echarts
   module Vector
     def self.get_config(x, value, min, max, lower_bound, upper_bound, title, subtitle, xLabel, yLabel, color_min = "limegreen", color_max = "tomato", color_generic = "dodgerblue")
+      # Rails.logger.debug("X: #{x.inspect}")
       {
         grid: {
           top: 80,
