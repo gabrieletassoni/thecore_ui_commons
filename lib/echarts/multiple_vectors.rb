@@ -13,7 +13,7 @@ module Echarts
           top: 80,
         },
         legend: {
-          top: 80,
+          bottom: 2,
           show: true,
           data: legend,
           type: "scroll",
@@ -23,6 +23,9 @@ module Echarts
           subtext: subtitle,
         },
         toolbox: {
+          top: 'middle',
+          right: 5,
+          orient: "vertical",
           feature: {
             saveAsImage: {},
             dataView: {},

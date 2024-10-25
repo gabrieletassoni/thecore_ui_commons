@@ -84,6 +84,9 @@ module Echarts
           subtext: subtitle,
         },
         toolbox: {
+          top: 'middle',
+          right: 5,
+          orient: "vertical",
           feature: {
             saveAsImage: {},
           }
