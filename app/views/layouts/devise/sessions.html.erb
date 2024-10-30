@@ -21,5 +21,6 @@
       </div>
       <%= render 'layouts/footer' %>
     </div>
+    <div id="appversion"><%=Rails.root.join(*"version").existence&.read%></div>
   </body>
 </html>
