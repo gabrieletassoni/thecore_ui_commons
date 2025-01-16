@@ -3,6 +3,6 @@ class InfoController < ApplicationController
     layout 'swagger'
     def swagger
         uri = URI(request.url)
-        @swagger_json_url = "#{uri.scheme}://#{uri.host}#{":#{uri.port}" if uri.port.present?}/api/v2/info/swagger.json"
+        @swagger_json_url = "#{uri.scheme}://#{uri.host}#{":#{uri.port}" if uri.port.present?}#{ENV.fetch("RAILS_RELATIVE_URL_ROOT", "")}/api/v2/info/swagger.json"
     end
 end
