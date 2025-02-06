@@ -1,4 +1,6 @@
 it:
+    settings: Impostazioni
+    master_data: Anagrafiche
     activerecord:
         models:
             thecore_settings/setting: Configurazioni
