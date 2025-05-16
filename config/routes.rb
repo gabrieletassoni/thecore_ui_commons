@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
     scope ENV.fetch("RAILS_RELATIVE_URL_ROOT", "/") do
-        devise_for :users
+        devise_for :users, controllers: { sessions: "users/sessions" }#, skip: [:sessions]
     end
     
     devise_scope :user do

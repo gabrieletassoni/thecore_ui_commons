@@ -1,3 +1,3 @@
 module ThecoreUiCommons
-  VERSION = "3.2.19".freeze
+  VERSION = "3.3.0".freeze
 end
