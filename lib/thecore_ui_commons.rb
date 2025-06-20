@@ -11,6 +11,7 @@ require "echarts/multiple_vectors"
 require "echarts/binary"
 require "echarts/binary_series"
 require "echarts/map"
+require "omniauth/rails_csrf_protection"
 
 require "thecore_ui_commons/engine"
 

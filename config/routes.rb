@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
     scope ENV.fetch("RAILS_RELATIVE_URL_ROOT", "/") do
-        devise_for :users, controllers: { sessions: "users/sessions" }#, skip: [:sessions]
+        controllers = {
+            sessions: "users/sessions"
+        }
+        controllers[:omniauth_callbacks] = 'users/omniauth_callbacks' if ThecoreAuthCommons.oauth_vars?
+        devise_for :users, controllers: controllers
     end
     
     devise_scope :user do

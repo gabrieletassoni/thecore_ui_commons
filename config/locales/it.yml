@@ -19,6 +19,12 @@ it:
   current_user: Utente corrente        
   dashboard: "Pagina Iniziale"     
   devise:
+    omniauth:
+      labels:
+        entra_id: 
+          html: Sign in con Microsoft <i class="fa fa-microsoft"></i>
+        google_oauth2: 
+          html: Sign in con Google <i class="fa fa-google"></i>
     sessions:
       new:
         login: Login

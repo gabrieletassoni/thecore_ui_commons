@@ -19,6 +19,12 @@ en:
   current_user: Current User
   dashboard: Dashboard
   devise:
+    omniauth:
+      labels:
+        entra_id: 
+          html: Sign in with Microsoft <i class="fa-brands fa-microsoft"></i>
+        google_oauth2: 
+          html: Sign in with Google <i class="fa-brands fa-google"></i>
     sessions:
       new:
         login: Login
