@@ -4,45 +4,45 @@ it:
       charts:
         menu: Analisi
         title: Grafici
-        breadcrumb: Grafici  
+        breadcrumb: Grafici
     links:
       label: Collegamenti
     settings:
       label: Impostazioni
       advanced: Avanzate
       registries: Anagrafiche
-      operations: Operatività      
+      operations: Operatività
     tools:
       label: "Strumenti"
-  advanced: Impostazioni        
-  contact: "Aiutaci a Migliorare"        
-  current_user: Utente corrente        
-  dashboard: "Pagina Iniziale"     
+  advanced: Impostazioni
+  contact: "Aiutaci a Migliorare"
+  current_user: Utente corrente
+  dashboard: "Pagina Iniziale"
   devise:
     omniauth:
       labels:
-        entra_id: 
+        entra_id:
           html: Sign in con Microsoft <i class="fa fa-microsoft"></i>
-        google_oauth2: 
+        google_oauth2:
           html: Sign in con Google <i class="fa fa-google"></i>
     sessions:
       new:
         login: Login
-        password: Password     
-  dont_leve_or_drag_here: Upload in corso, si prega di non lasciare la pagina o trascinare qui altri file. 
+        password: Password
+  dont_leve_or_drag_here: Upload in corso, si prega di non lasciare la pagina o trascinare qui altri file.
   errors:
     messages:
-      invalid: contiene caratteri invalidi   
-  file_upload: Descrizione della procedura, prego aggiungere una traduzione per file_upload al tuo file delle traduzioni.
-  file_upload_subtitle: Descrizione aggiuntiva, prego aggiungere una traduzione per file_upload_subtitle al tuo file delle traduzioni.
-  hello: "Ciao Mondo"  
+      invalid: contiene caratteri non validi
+  file_upload: Descrizione della procedura, prego aggiungere una traduzione per file_upload al file delle traduzioni.
+  file_upload_subtitle: Descrizione aggiuntiva, prego aggiungere una traduzione per file_upload_subtitle al file delle traduzioni.
+  hello: "Ciao Mondo"
   import_success: Importazione completata con successo
   loading: Caricamento
-  main_records: Anagrafiche  
-  manage: "Gestione"  
-  please_drag_and_drop_here: Trascinare qui i file da importare  
+  main_records: Anagrafiche
+  manage: "Gestione"
+  please_drag_and_drop_here: Trascinare qui i file da importare
   run_import: Forza l'importazione
-  sign_out: "Uscita"
+  sign_out: "Esci"
   tiered_times:
     dd:
       zero: "0 Giorni"

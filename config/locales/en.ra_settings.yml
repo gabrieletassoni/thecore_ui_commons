@@ -1,4 +1,6 @@
 en:
-    activerecord:
-        models:
-            thecore_settings/setting: Configurations
+  settings: Settings
+  master_data: Registries
+  activerecord:
+    models:
+      thecore_settings/setting: Configurations
