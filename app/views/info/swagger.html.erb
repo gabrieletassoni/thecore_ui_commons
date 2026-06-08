@@ -1,28 +1,55 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.19.5/swagger-ui-bundle.js"> </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.19.5/swagger-ui-standalone-preset.js"> </script>
-    <script>
-        function get(yourUrl){
-            var Httpreq = new XMLHttpRequest(); // a new request
-            Httpreq.open("GET",yourUrl,false);
-            Httpreq.send(null);
-            var json_obj = JSON.parse(Httpreq.responseText);
-            return json_obj;          
-        }
-        window.onload = function() {
-            const ui = SwaggerUIBundle({
-            spec: get('<%= @swagger_json_url %>'),
-            dom_id: '#swagger-ui',
-            deepLinking: true,
-            presets: [
-                SwaggerUIBundle.presets.apis,
-                SwaggerUIStandalonePreset
-            ],
-            plugins: [
-                SwaggerUIBundle.plugins.DownloadUrl
-            ],
-            layout: "StandaloneLayout"
-            })
-        
-            window.ui = ui
-        }
+<% if @versions.length > 1 %>
+  <% content_for :version_nav do %>
+    <style>
+      #version-nav {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.55rem 1rem;
+        background: #f1f5f9;
+        border-bottom: 1px solid #e2e8f0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 0.82rem;
+        color: #64748b;
+      }
+      #version-nav .vn-label { margin-right: 0.2rem; }
+      #version-nav a {
+        display: inline-block;
+        padding: 0.22rem 0.7rem;
+        border-radius: 999px;
+        text-decoration: none;
+        border: 1px solid #3b82f6;
+        color: #3b82f6;
+        font-weight: 500;
+        transition: background 0.15s, color 0.15s;
+      }
+      #version-nav a:hover { background: #3b82f6; color: #fff; }
+      #version-nav a.current { background: #3b82f6; color: #fff; pointer-events: none; }
+    </style>
+    <div id="version-nav">
+      <span class="vn-label">API version:</span>
+      <% @versions.each do |v| %>
+        <% if v == @version %>
+          <a href="#" class="current"><%= v %></a>
+        <% else %>
+          <a href="<%= request.path.sub(/[^\/]+$/, v) %>"><%= v %></a>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.19.5/swagger-ui-bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.19.5/swagger-ui-standalone-preset.js"></script>
+<script>
+  window.addEventListener('load', function () {
+    SwaggerUIBundle({
+      url: '<%= j @swagger_json_url %>',
+      dom_id: '#swagger-ui',
+      deepLinking: true,
+      presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
+      plugins: [SwaggerUIBundle.plugins.DownloadUrl],
+      layout: 'StandaloneLayout'
+    });
+  });
 </script>

@@ -1,8 +1,10 @@
 class InfoController < ApplicationController
-    # This is a model-less controller just to render che swagger page using a custom layout
     layout 'swagger'
     def swagger
+        @version = params[:version].to_s.gsub(/[^a-zA-Z0-9]/, '')
+        @versions = ThecoreUiCommons.swagger_api_versions
         uri = URI(request.url)
-        @swagger_json_url = "#{uri.scheme}://#{uri.host}#{":#{uri.port}" if uri.port.present?}#{ENV.fetch("RAILS_RELATIVE_URL_ROOT", "")}/api/v2/info/swagger.json"
+        @base_url = "#{uri.scheme}://#{uri.host}#{":#{uri.port}" if uri.port.present?}#{ENV.fetch("RAILS_RELATIVE_URL_ROOT", "")}"
+        @swagger_json_url = "#{@base_url}/api/#{@version}/info/swagger.json"
     end
 end

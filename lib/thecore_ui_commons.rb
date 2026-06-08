@@ -16,6 +16,17 @@ require "omniauth/rails_csrf_protection"
 require "thecore_ui_commons/engine"
 
 module ThecoreUiCommons
+	mattr_accessor :swagger_api_versions, default: []
+
+	def self.scan_swagger_routes(routes)
+		routes
+			.map { |r| r.path.spec.to_s }
+			.grep(/\/api\/(v\d+)\/info\/swagger/)
+			.map { |p| p.match(/\/api\/(v\d+)\/info\/swagger/)[1] }
+			.uniq
+			.sort_by { |v| v[1..].to_i }
+	end
+
 	def self.save_files files
 		files.each do |pic|
 			upload_dir = Rails.root.join(Settings.ns(:importer).import_from_folder, 'uploads')
