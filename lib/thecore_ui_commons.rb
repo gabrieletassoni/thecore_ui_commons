@@ -16,7 +16,15 @@ require "omniauth/rails_csrf_protection"
 require "thecore_ui_commons/engine"
 
 module ThecoreUiCommons
-	mattr_accessor :swagger_api_versions, default: []
+	@swagger_api_versions = nil
+
+	class << self
+		attr_writer :swagger_api_versions
+
+		def swagger_api_versions
+			@swagger_api_versions.nil? ? scan_swagger_routes(Rails.application.routes.routes) : @swagger_api_versions
+		end
+	end
 
 	def self.scan_swagger_routes(routes)
 		routes

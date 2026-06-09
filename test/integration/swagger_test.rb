@@ -17,7 +17,7 @@ class SwaggerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_no_match %r{id="version-nav"}, response.body
   ensure
-    ThecoreUiCommons.swagger_api_versions = []
+    ThecoreUiCommons.swagger_api_versions = nil
   end
 
   test "Version Nav Banner lists all versions with current highlighted when multiple versions available" do
@@ -28,7 +28,7 @@ class SwaggerTest < ActionDispatch::IntegrationTest
     assert_match %r{class="current"[^>]*>v2<}, response.body
     assert_match %r{href="[^"]*v3"[^>]*>v3<}, response.body
   ensure
-    ThecoreUiCommons.swagger_api_versions = []
+    ThecoreUiCommons.swagger_api_versions = nil
   end
 
   test "version param with invalid chars is stripped before use in Swagger URL" do
