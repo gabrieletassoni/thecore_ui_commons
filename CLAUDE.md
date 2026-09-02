@@ -40,3 +40,7 @@ bundle exec ruby -Itest test/integration/swagger_test.rb
 - Architecture decisions live in `docs/adr/` — check before reversing a non-obvious choice.
 - No comments unless the *why* is non-obvious from the code.
 - No Bootstrap in the Swagger layout; keep it dependency-free.
+
+## CI/CD — gem publish (`.github/workflows/gempush.yml`)
+
+The RubyGems publish workflow's `on: push` trigger is scoped to `branches: [release/3]` only, not an unscoped `push`. This was tightened after an incident on a sibling repo (`thecore_generators`) where an unscoped trigger published a version bump pushed to an unreviewed feature branch. Keep the trigger scoped to `release/3` so publishing only ever happens on a merge/push to the actual release branch.
