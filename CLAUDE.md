@@ -11,7 +11,7 @@ bundle exec ruby -Itest test/thecore_ui_commons_test.rb
 bundle exec ruby -Itest test/integration/swagger_test.rb
 ```
 
-`DATABASE_URL` is forced to SQLite3 inside `test_helper.rb` — no env var needed.
+Tests run on **PostgreSQL only** (the sole DB target of all Thecore gems and host apps — never SQLite). `test/dummy/config/database.yml` uses the `postgresql` adapter (`PGHOST`/`PGPORT`/`PGUSER`/`PGPASSWORD`, defaulting to `db`/`5432`/`postgres`/`postgres`) with databases `thecore_ui_commons_{development,test,production}`. When `DATABASE_URL` is set (the devcontainer points it at the host app's dev DB), `test/dummy/config/boot.rb` keeps its server/credentials but rewrites the database name to `thecore_ui_commons_<RAILS_ENV>`, so no entry point (tests, `bin/rails db:*`, `db:test:prepare`) can ever touch the host's databases. One-time setup: `cd test/dummy && RAILS_ENV=test bin/rails db:create`. Full suite: `bin/test`.
 
 ## Key files
 
