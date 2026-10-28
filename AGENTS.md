@@ -24,7 +24,7 @@ Tests run on **PostgreSQL only** (the sole DB target of all Thecore gems and hos
 | `app/views/layouts/swagger.html.erb` | Minimal layout; `yield :version_nav` slot sits above `#swagger-ui` |
 | `config/routes.rb` | `/info/swagger` (301 → v2) + `/info/swagger/:version` |
 | `docs/adr/` | Architecture decisions |
-| `CONTEXT.md` | Domain glossary — canonical terms for this codebase |
+| `GLOSSARY.md` | Domain glossary — canonical terms for this codebase |
 
 ## Architecture to know
 
@@ -36,7 +36,11 @@ Tests run on **PostgreSQL only** (the sole DB target of all Thecore gems and hos
 
 ## Conventions
 
-- Domain language lives in `CONTEXT.md` — check it before introducing new terms.
+- Domain language lives in `GLOSSARY.md` — check it before introducing new terms.
 - Architecture decisions live in `docs/adr/` — check before reversing a non-obvious choice.
 - No comments unless the *why* is non-obvious from the code.
 - No Bootstrap in the Swagger layout; keep it dependency-free.
+
+## Security scanning and agent skills
+
+See the "Security scanning" and "Agent skills" sections of `CLAUDE.md`. Issues live in this repository's GitHub Issues (`docs/agents/issue-tracker.md`), and the skills come from the `mattpocock-skills` plugin on the host, never vendored here.
