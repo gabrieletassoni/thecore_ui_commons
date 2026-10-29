@@ -61,6 +61,10 @@ Configured in the GitHub repository settings, not in files:
   apps' pipelines, whose `Gemfile.lock` resolves every ATOM.
 - Findings never block a release: GitHub notifies the owner. When one needs work, open a GitHub
   issue (see Agent skills).
+- `config/brakeman.ignore` (for a local `brakeman` run) records the High `ForgerySetting` on
+  `ApplicationController` as a false positive: `ConcernCommonApplicationController`, included at
+  boot by `config/initializers/after_initialize.rb`, calls `protect_from_forgery prepend: true`.
+  Each entry's `note` says why.
 
 ## Agent skills
 
