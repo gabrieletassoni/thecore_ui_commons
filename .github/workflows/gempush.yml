@@ -1,6 +1,6 @@
 name: Test and publish
 
-# One workflow, two jobs (same as the other Thecore ATOMs, Odoo #6088; added here with 3.4.0): every push and pull request on release/3 runs the test
+# One workflow, two jobs (Odoo #6088): every push and pull request on release/3 runs the test
 # suite on PostgreSQL 15 (never SQLite); on a push, the gem is tagged and published only if the
 # tests are green ("needs: test"). The JUnit report of a published version is attached to its
 # GitHub release, so it stays downloadable for as long as the release exists.
@@ -28,16 +28,6 @@ jobs:
           --health-interval 5s
           --health-timeout 5s
           --health-retries 10
-      # The dummy app boots Sidekiq's client (thecore_backend_commons), which connects to Redis.
-      redis:
-        image: redis:7-bookworm
-        ports:
-          - 6379:6379
-        options: >-
-          --health-cmd "redis-cli ping"
-          --health-interval 5s
-          --health-timeout 5s
-          --health-retries 10
 
     # test/dummy/config/database.yml reads PGHOST/PGPORT/PGUSER/PGPASSWORD.
     env:
@@ -45,7 +35,6 @@ jobs:
       PGPORT: 5432
       PGUSER: postgres
       PGPASSWORD: postgres
-      REDIS_URL: redis://localhost:6379/15
       RAILS_ENV: test
       CI: true
       JUNIT_REPORT_DIR: ${{ github.workspace }}/tmp/junit

@@ -15,8 +15,11 @@ class OmniauthCsrfTest < ActiveSupport::TestCase
     ActionController::Base.allow_forgery_protection = @forgery_protection
   end
 
-  test "the OmniAuth request phase is guarded by the Rails CSRF verifier" do
-    assert_kind_of OmniAuth::RailsCsrfProtection::TokenVerifier, OmniAuth.config.request_validation_phase
+  # On Rails 8.1, 2.x includes RequestForgeryProtection against ActionController::Base.config itself,
+  # which resets these defaults at require time: the app's settings (load_defaults) must still win.
+  test "the app's CSRF settings survive loading the verifier" do
+    assert ActionController::Base.per_form_csrf_tokens
+    assert ActionController::Base.forgery_protection_origin_check
   end
 
   test "a POST to the request phase without an authenticity token is rejected" do

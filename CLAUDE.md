@@ -17,7 +17,7 @@ The `Gemfile` pins the Rails line (`RAILS_LINE`) and minitest 5; `Gemfile.lock` 
 
 **omniauth-rails_csrf_protection** (`>= 1.0, < 3`): this gem requires it, so OmniAuth's request phase (`POST /auth/:provider`) checks the Rails CSRF token. 2.x is the one without the `ActiveSupport::Configurable` deprecation on Rails 8.1; `test/integration/omniauth_csrf_test.rb` covers the check and the clean boot.
 
-Tests run on **PostgreSQL only** (the sole DB target of all Thecore gems and host apps — never SQLite). `test/dummy/config/database.yml` uses the `postgresql` adapter (`PGHOST`/`PGPORT`/`PGUSER`/`PGPASSWORD`, defaulting to `db`/`5432`/`postgres`/`postgres`) with databases `thecore_ui_commons_{development,test,production}`. When `DATABASE_URL` is set (the devcontainer points it at the host app's dev DB), `test/dummy/config/boot.rb` keeps its server/credentials but rewrites the database name to `thecore_ui_commons_<RAILS_ENV>`, so no entry point (tests, `bin/rails db:*`, `db:test:prepare`) can ever touch the host's databases. One-time setup: `cd test/dummy && RAILS_ENV=test bin/rails db:create`. Full suite: `bin/test`.
+Tests run on **PostgreSQL only** (the sole DB target of all Thecore gems and host apps — never SQLite). `test/dummy/config/database.yml` uses the `postgresql` adapter (`PGHOST`/`PGPORT`/`PGUSER`/`PGPASSWORD`, defaulting to `db`/`5432`/`postgres`/`postgres`) with databases `thecore_ui_commons_{development,test,production}`. When `DATABASE_URL` is set (the devcontainer points it at the host app's dev DB), `test/dummy/config/boot.rb` keeps its server/credentials but rewrites the database name to `thecore_ui_commons_<RAILS_ENV>`, so no entry point (tests, `bin/rails db:*`, `db:test:prepare`) can ever touch the host's databases. One-time setup: `cd test/dummy && RAILS_ENV=test bin/rails db:create`.
 
 ## Key files
 
@@ -49,7 +49,7 @@ Tests run on **PostgreSQL only** (the sole DB target of all Thecore gems and hos
 
 ## CI/CD — test and gem publish (`.github/workflows/gempush.yml`)
 
-Two jobs: `test` runs `bin/test` on PostgreSQL 15 and Redis 7 (Ruby 3.3) on every push and pull request on `release/3`; `publish` (`needs: test`, pushes only) builds and pushes the gem, then tags the version and creates its GitHub release with the JUnit report attached. A version whose tag exists is skipped.
+Two jobs: `test` runs `bin/test` on PostgreSQL 15 (Ruby 3.3) on every push and pull request on `release/3`; `publish` (`needs: test`, pushes only) builds and pushes the gem, then tags the version and creates its GitHub release with the JUnit report attached. A version whose tag exists is skipped.
 
 The RubyGems publish workflow's `on: push` trigger is scoped to `branches: [release/3]` only, not an unscoped `push`. This was tightened after an incident on a sibling repo (`thecore_generators`) where an unscoped trigger published a version bump pushed to an unreviewed feature branch. Keep the trigger scoped to `release/3` so publishing only ever happens on a merge/push to the actual release branch.
 
