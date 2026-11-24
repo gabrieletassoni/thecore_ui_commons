@@ -24,7 +24,9 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_dependency "thecore_backend_commons", "~> 3.0"
-  spec.add_dependency "omniauth-rails_csrf_protection", "~> 1.0"
+  # 2.x drops ActiveSupport::Configurable on Rails 8.1 (deprecated, gone in 8.2) and keeps the
+  # 1.x code path on 7.2; 1.x stays allowed so existing hosts need no update (host Odoo #6090).
+  spec.add_dependency "omniauth-rails_csrf_protection", ">= 1.0", "< 3"
   spec.add_dependency "haml", "~> 6.0"
   spec.add_dependency "haml-rails", "~> 2.1"
   # spec.add_dependency "serviceworker-rails", "~> 0.6"
