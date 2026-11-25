@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.5.0] - 2026-11-25
+
+### Removed
+- The `reject_locked!` before_action on the Devise controllers. It signed a locked user out with "Your account is locked.", telling that the account exists. thecore_auth_commons 3.7.1 refuses a locked user on every login channel exactly like a wrong password, so this gem now requires `thecore_auth_commons ~> 3.7, >= 3.7.1` (host Odoo #6259).
+
+### Added
+- `test/integration/locked_user_sign_in_test.rb`: a locked user on the sign-in form gets the wrong-password answer (401, same alert). The test helper now builds the test database from the engines' migrations, and the dev `Gemfile` adds `sassc-rails` to render the sign-in layout.
+- CI: a rerun of the publish job after a failed tag push skips `gem push` for a version already on RubyGems and creates the tag and the release.
+
 ## [3.4.0] - 2026-11-24
 
 ### Changed

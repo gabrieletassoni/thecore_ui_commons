@@ -13,21 +13,7 @@ module ConcernCommonApplicationController
     end
     
     before_action :store_user_location!, if: :storable_location?
-    before_action :reject_locked!, if: :devise_controller?
-    
-    # Auto-sign out locked users
-    def reject_locked!
-      if !current_user.blank? && current_user.locked?
-        Rails.logger.debug " - Cleaning session"
-        sign_out current_user
-        user_session = nil
-        current_user = nil
-        flash[:alert] = "Your account is locked."
-        flash[:notice] = nil
-        redirect_to root_url
-      end
-    end
-    
+
     # Its important that the location is NOT stored if:
     # - The request method is not GET (non idempotent)
     # - The request is handled by a Devise controller such as 

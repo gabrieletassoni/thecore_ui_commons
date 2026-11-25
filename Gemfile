@@ -20,3 +20,7 @@ gem "sprockets-rails"
 
 # JUnit XML report in CI (test/support/junit_report.rb, only when JUNIT_REPORT_DIR is set).
 gem "minitest-reporters", "~> 1.8"
+
+# The sign-in layout links SCSS (app/assets/stylesheets/devise): the host apps compile it with
+# sassc-rails, so the dummy app does too (test/integration/locked_user_sign_in_test.rb renders it).
+gem "sassc-rails", "~> 2.1"

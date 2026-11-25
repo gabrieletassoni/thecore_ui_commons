@@ -2,7 +2,10 @@
 ENV["RAILS_ENV"] = "test"
 
 require_relative "../test/dummy/config/environment"
-ActiveRecord::Migrator.migrations_paths = [File.expand_path("../test/dummy/db/migrate", __dir__)]
+# The dummy app has no schema of its own: build the test database from the migrations the engines
+# add to the app's db/migrate paths (thecore_auth_commons' users, thecore_settings, ...).
+ActiveRecord::Migrator.migrations_paths = Rails.application.paths["db/migrate"].to_a
+ActiveRecord::Tasks::DatabaseTasks.migrate
 require "rails/test_help"
 require_relative "support/junit_report"
 

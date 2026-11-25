@@ -24,6 +24,9 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_dependency "thecore_backend_commons", "~> 3.0"
+  # 3.7.1 refuses a locked user on every login channel exactly like a wrong password (host Odoo
+  # #6051): this gem no longer signs them out itself, with a message telling that the account exists.
+  spec.add_dependency "thecore_auth_commons", "~> 3.7", ">= 3.7.1"
   # 2.x drops ActiveSupport::Configurable on Rails 8.1 (deprecated, gone in 8.2) and keeps the
   # 1.x code path on 7.2; 1.x stays allowed so existing hosts need no update (host Odoo #6090).
   spec.add_dependency "omniauth-rails_csrf_protection", ">= 1.0", "< 3"
